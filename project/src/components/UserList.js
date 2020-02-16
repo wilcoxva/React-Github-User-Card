@@ -1,5 +1,6 @@
 import React from 'react';
 import UserCard from './UserCard';
+import styled from 'styled-components';
 
 class UserList extends React.Component {
 
@@ -11,9 +12,9 @@ class UserList extends React.Component {
     render(props) {
       console.log(props)
       return (
-        <div className="UserList">
-          <header className="UserList-header">
-            <h1>Hello {this.props.info.login}!</h1>
+        <div>
+          <header>
+            <h1>Hello <Span>{this.props.info.login}</Span>!</h1>
             <img src={this.props.info.avatar_url} />
             <p>{this.props.info.name}</p>
             <p>{this.props.info.location}</p>
@@ -28,3 +29,6 @@ class UserList extends React.Component {
   
   export default UserList;
   
+  const Span = styled.span`
+    color: lightblue;
+  `

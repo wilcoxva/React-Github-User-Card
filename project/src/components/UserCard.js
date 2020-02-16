@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 class UserCard extends React.Component {
 
@@ -20,10 +21,10 @@ class UserCard extends React.Component {
         <div className="UserCard">
           <header className="UserCard-header">
             {this.state.followers.map(res => (
-                <div>
+                <Div>
                     <h1>{res.login}</h1>
                     <img src={res.avatar_url} />
-                </div>
+                </Div>
             ))}
           </header>
         </div>
@@ -34,3 +35,7 @@ class UserCard extends React.Component {
   
   export default UserCard;
   
+  const Div = styled.div`
+    background-color: gray;
+    border-radius: 25px;
+  `
